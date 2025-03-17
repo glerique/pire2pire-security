@@ -7,10 +7,10 @@
 ### 1.2. [Analyse des risques et des menaces potentielles](risk-analysis.md#12-analyse-des-risques-et-menaces-potentielles)
 ### 1.3. [Définition des exigences de sécurité](risk-analysis.md#13-définition-des-exigences-de-sécurité)
 
-## 2. Conformité au RGPD
-### 2.1. Principes fondamentaux du RGPD
-### 2.2. Gestion des données personnelles des utilisateurs
-### 2.3. Droits des utilisateurs
+## 2. [Conformité au RGPD](gdpr-compliance.md)
+### 2.1. [Principes fondamentaux du RGPD](gdpr-compliance.md#21-principes-fondamentaux-du-rgpd)
+### 2.2. [Gestion des données personnelles des utilisateurs](gdpr-compliance.md#22-gestion-des-données-personnelles-des-utilisateurs)
+### 2.3. [Droits des utilisateurs](gdpr-compliance.md#23-droits-des-utilisateurs)
 
 ## 3. Conception de l'Architecture Sécurisée
 ### 3.1. Choix technologiques
