@@ -12,21 +12,22 @@
 ### 2.2. [Gestion des données personnelles des utilisateurs](gdpr-compliance.md#22-gestion-des-données-personnelles-des-utilisateurs)
 ### 2.3. [Droits des utilisateurs](gdpr-compliance.md#23-droits-des-utilisateurs)
 
-## 3. Conception de l'Architecture Sécurisée
-### 3.1. Choix technologiques
-### 3.2. Modèle d'authentification et gestion des autorisations
-### 3.3. Chiffrement et stockage sécurisé des données
-### 3.4. Sécurisation spécifique des composants backend
+## 3. [Conception de l'Architecture Sécurisée](secure-architecture.md)
+### 3.1. [Choix technologiques](secure-architecture.md#31-choix-technologiques)
+### 3.2. [Modèle d'authentification et gestion des autorisations](secure-architecture.md#32-modèle-dauthentification-et-gestion-des-autorisations)
+### 3.3. [Chiffrement et stockage sécurisé des données](secure-architecture.md#33-chiffrement-et-stockage-sécurisé-des-données)
+### 3.4. [Sécurisation spécifique des composants backend](secure-architecture.md#34-sécurisation-spécifique-des-composants-backend)
 
 ## 4. Cycle de Développement Sécurisé (Secure SDLC)
 ### 4.1. Intégration de la sécurité dans les phases de développement
 ### 4.2. Tests de sécurité et analyse de code
 ### 4.3. Gestion sécurisée des dépendances
 
-## 5. Implémentation de l'Authentification Sécurisée
-### 5.1. Authentification multifacteur (MFA) et recommandations ANSSI
-### 5.2. Politiques de gestion des mots de passe
-### 5.3. Gestion des sessions et protection contre le vol d'identifiants
+## 5. [Implémentation de l'Authentification Sécurisée](secure-authentication.md)
+### 5.1. [Authentification multifacteur (MFA) et recommandations ANSSI](secure-authentication.md#51-authentification-multifacteur-mfa-et-recommandations-anssi)
+### 5.2. [Politiques de gestion des mots de passe](secure-authentication.md#52-politiques-de-gestion-des-mots-de-passe)
+### 5.3. [Gestion des sessions et protection contre le vol d'identifiants](secure-authentication.md#53-gestion-des-sessions-et-protection-contre-le-vol-didentifiants)
+### 5.4. [Protection contre les attaques ciblées](secure-authentication.md#54-protection-contre-les-attaques-ciblées)
 
 ## 6. Sécurisation des Communications et des Données
 ### 6.1. Utilisation de TLS et HSTS
