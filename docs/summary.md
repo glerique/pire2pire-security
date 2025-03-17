@@ -18,10 +18,10 @@
 ### 3.3. [Chiffrement et stockage sécurisé des données](secure-architecture.md#33-chiffrement-et-stockage-sécurisé-des-données)
 ### 3.4. [Sécurisation spécifique des composants backend](secure-architecture.md#34-sécurisation-spécifique-des-composants-backend)
 
-## 4. Cycle de Développement Sécurisé (Secure SDLC)
-### 4.1. Intégration de la sécurité dans les phases de développement
-### 4.2. Tests de sécurité et analyse de code
-### 4.3. Gestion sécurisée des dépendances
+## 4. [Cycle de Développement Sécurisé (Secure SDLC)](secure-sdlc.md)
+### 4.1. [Intégration de la sécurité dans les phases de développement](secure-sdlc.md#41-intégration-de-la-sécurité-dans-les-phases-de-développement)
+### 4.2. [Tests de sécurité et analyse de code](secure-sdlc.md#42-tests-de-sécurité-et-analyse-de-code)
+### 4.3. [Gestion sécurisée des dépendances](secure-sdlc.md#43-gestion-sécurisée-des-dépendances)
 
 ## 5. [Implémentation de l'Authentification Sécurisée](secure-authentication.md)
 ### 5.1. [Authentification multifacteur (MFA) et recommandations ANSSI](secure-authentication.md#51-authentification-multifacteur-mfa-et-recommandations-anssi)
