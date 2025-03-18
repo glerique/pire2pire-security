@@ -16,29 +16,15 @@ Le Règlement Général sur la Protection des Données (RGPD) établit un cadre 
 
 ## 2.2 Gestion des données personnelles des utilisateurs
 
-Notre stratégie de gestion des données personnelles repose sur plusieurs piliers essentiels :
+Notre stratégie de gestion des données personnelles repose sur quatre axes essentiels :
 
-### 2.2.1 Collecte et consentement
+- **Collecte et consentement** : Obtention d'un consentement explicite avant toute collecte, avec possibilité simple de retrait à tout moment.
 
-- **Consentement explicite** : Obtention du consentement libre de l'utilisateur avant toute collecte de données
-- **Retrait du consentement** : Procédure simple permettant à l'utilisateur de retirer son consentement à tout moment
+- **Stockage sécurisé** : Utilisation d'algorithmes de chiffrement robustes, cloisonnement des données identifiantes et des données d'usage dans des structures séparées reliées par des identifiants pseudonymisés, et protection des sauvegardes au même niveau que les données de production.
 
-### 2.2.2 Stockage sécurisé
+- **Politique de rétention** : Établissement de durées de conservation définies selon le type de données et mise en place de mécanismes d'effacement automatique à l'expiration de ces durées.
 
-- **Chiffrement des données sensibles** : Utilisation d'algorithmes robustes pour protéger les données personnelles en base de données
-- **Cloisonnement des données** : Séparation des données identifiantes (nom, email, adresse) des données d'usage et de comportement (cours suivis, résultats, temps de connexion) dans des bases ou tables distinctes, reliées par des identifiants pseudonymisés. Cette architecture réduit les risques d'identification en cas de compromission partielle du système.
-- **Backup sécurisé** : Protection des sauvegardes avec le même niveau de sécurité que les données de production
-
-### 2.2.3 Politique de rétention
-
-- **Durées définies** : Établissement de durées de conservation en fonction du type de données et de leur finalité
-- **Suppression automatique** : Mise en place de mécanismes d'effacement à l'expiration de la durée de conservation
-
-### 2.2.4 Contrôle d'accès
-
-- **Principe du moindre privilège** : Limitation des accès aux seules personnes ayant un besoin légitime
-- **Journalisation des accès** : Enregistrement de tous les accès aux données personnelles
-- **Revue périodique** : Vérification régulière des droits d'accès attribués aux collaborateurs
+- **Contrôle d'accès** : Application stricte du principe du moindre privilège, journalisation complète des accès aux données personnelles et vérification régulière des droits attribués aux collaborateurs.
 
 ## 2.3 Droits des utilisateurs
 
@@ -51,11 +37,6 @@ Notre plateforme implémentera des mécanismes techniques et organisationnels po
 | **Droit à l'effacement** | Suppression des données sur demande | Procédure automatisée de suppression avec confirmation de l'action |
 | **Droit à la portabilité** | Récupérer ses données dans un format réutilisable | Fonctionnalité d'export au format JSON ou CSV |
 
-### 2.3.1 Gestion des demandes d'exercice des droits
-
-- **Délai de réponse** : La plateforme s'engagera à traiter les demandes dans un délai maximum d'un mois
-- **Vérification d'identité** : Mise en place d'une procédure sécurisée pour s'assurer de l'identité du demandeur
-- **Traçabilité** : Enregistrement de toutes les demandes et des actions entreprises
-- **Formation** : Les administrateurs seront formé pour répondre efficacement aux demandes relatives aux droits RGPD
+Les demandes d'exercice de ces droits seront traitées dans un délai maximum d'un mois, après vérification rigoureuse de l'identité du demandeur. Toutes les demandes et actions entreprises feront l'objet d'un enregistrement à des fins de traçabilité.
 
 Cette stratégie de conformité RGPD sera régulièrement auditée et mise à jour pour refléter l'évolution de la réglementation et des bonnes pratiques dans le domaine de la protection des données personnelles.
