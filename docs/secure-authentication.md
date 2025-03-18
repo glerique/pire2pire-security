@@ -20,18 +20,28 @@ L'authentification multifacteur constitue une protection essentielle contre les 
 
 La robustesse des mots de passe demeure fondamentale même avec le MFA :
 
-- **Exigences de complexité** :
-  - Longueur minimale de 12 caractères
-  - Mélange obligatoire de caractères (majuscules, minuscules, chiffres, caractères spéciaux)
-  - Vérification avec une comparaison sur les dictionnaires de mots de passe compromis
-  - Refus des mots de passe trop courants ou déjà exposés dans des fuites
-- **Stockage sécurisé** :
-  - Utilisation d'algorithmes de hachage modernes (Argon2id ou bcrypt)
-  - Application d'un sel unique pour chaque mot de passe
-- **Politiques de renouvellement** :
-  - Changement obligatoire des mots de passe lors d'une suspicion de compromission
-  - Notification à l'utilisateur lors de toute tentative de connexion suspecte
-  - Interdiction de réutiliser les derniers mots de passe
+- ## 5.2 Implémentation technique des politiques de mots de passe
+
+L'implémentation technique des politiques de mots de passe repose sur plusieurs composants essentiels :
+
+- **Validation côté serveur** :
+  - Mise en place d'une bibliothèque dédiée à la validation des mots de passe
+  - Intégration d'API externes pour la vérification des mots de passe compromis (HaveIBeenPwned)
+  - Ajout de règles de validation paramétrables selon l'évolution des standards de sécurité
+
+- **Hachage sécurisé** :
+  - Nous utiliserons des méthodes avancées de protection (comme Argon2id) qui transforment votre mot de passe en code illisible, même pour nos administrateurs
+  - Génération de sels uniques d'au moins 16 octets (128 bits) pour chaque utilisateur
+  - Stockage séparé des sels et des hachages pour une sécurité renforcée
+
+- **Infrastructure technique** :
+  - Séparation de la base de données d'authentification des autres services
+  - Mise en place d'alertes automatiques en cas de tentatives de fuite de la table des mots de passe
+  - Configuration d'une rotation automatique des clés de chiffrement
+
+- **Mécanismes d'application des politiques** :
+  - Création d'un service dédié à la vérification de la robustesse des mots de passe
+  - Intégration d'une API interne pour uniformiser les contrôles à travers les différents services
 
 ## 5.3 Gestion des sessions et protection contre le vol d'identifiants
 
