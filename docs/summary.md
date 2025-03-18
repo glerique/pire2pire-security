@@ -29,29 +29,29 @@
 ### 5.3. [Gestion des sessions et protection contre le vol d'identifiants](secure-authentication.md#53-gestion-des-sessions-et-protection-contre-le-vol-didentifiants)
 ### 5.4. [Protection contre les attaques ciblées](secure-authentication.md#54-protection-contre-les-attaques-ciblées)
 
-## 6. Sécurisation des Communications et des Données
-### 6.1. Utilisation de TLS et HSTS
-### 6.2. Protection contre les attaques de l'homme du milieu (MITM)
-### 6.3. Chiffrement des données sensibles en base de données
+## 6. [Sécurisation des Communications et des Données](secure-communications.md)
+### 6.1. [Utilisation de TLS et HSTS](secure-communications.md#61-utilisation-de-tls-et-hsts)
+### 6.2. [Protection contre les attaques de l'homme du milieu (MITM)](secure-communications.md#62-protection-contre-les-attaques-de-lhomme-du-milieu-mitm)
+### 6.3. [Chiffrement des données sensibles en base de données](secure-communications.md#63-chiffrement-des-données-sensibles-en-base-de-données)
 
-## 7. Protection Contre les Vulnérabilités Web
-### 7.1. Mise en place d'une politique Content Security Policy (CSP)
-### 7.2. Protection contre les attaques XSS, CSRF et SQLi
-### 7.3. Configuration sécurisée des cookies et du stockage navigateur
+## 7. [Protection Contre les Vulnérabilités Web](web-vulnerabilities.md)
+### 7.1. [Mise en place d'une politique Content Security Policy (CSP)](web-vulnerabilities.md#71-mise-en-place-dune-politique-content-security-policy-csp)
+### 7.2. [Protection contre les attaques XSS, CSRF et SQLi](web-vulnerabilities.md#72-protection-contre-les-attaques-courantes-xss-csrf-et-sqli)
+### 7.3. [Configuration sécurisée des cookies et du stockage navigateur](web-vulnerabilities.md#73-sécurisation-des-données-côté-navigateur)
 
-## 8. Gestion des Accès et des Autorisations
-### 8.1. Principe de moindre privilège
-### 8.2. Segmentation des rôles et des permissions
-### 8.3. Surveillance des tentatives d'accès et journalisation
+## 8. [Gestion des Accès et des Autorisations](access-management.md)
+### 8.1. [Principe de moindre privilège](access-management.md#71-principe-de-moindre-privilège)
+### 8.2. [Segmentation des rôles et des permissions](access-management.md#72-segmentation-des-rôles-et-des-permissions)
+### 8.3. [Surveillance des tentatives d'accès et journalisation](access-management.md#73-surveillance-des-tentatives-daccès-et-journalisation)
 
-## 9. Maintien en Conditions de Sécurité
-### 9.1. Plan de gestion des mises à jour et des correctifs
-### 9.2. Surveillance et audit régulier
-### 9.3. Gestion des incidents de sécurité et plan de réponse
+## 9. [Maintien en Conditions de Sécurité](security-maintenance)
+### 9.1. [Plan de gestion des mises à jour et des correctifs](security-maintenance#91-plan-de-gestion-des-mises-à-jour-et-des-correctifs)
+### 9.2. [Surveillance et audit régulier](security-maintenance#92-surveillance-et-audit-régulier)
+### 9.3. [Gestion des incidents de sécurité et plan de réponse](security-maintenance#93-gestion-des-incidents-de-sécurité-et-plan-de-réponse)
 
-## 10. Guide de Sensibilisation et de Bonnes Pratiques
-### 10.1. Formation des utilisateurs et des administrateurs
-### 10.2. Politique de gestion des identifiants et mots de passe
-### 10.3. Bonnes pratiques pour les développeurs
+## 10. [Guide de Sensibilisation et de Bonnes Pratiques](best-practices.md)
+### 10.1. [Formation des utilisateurs et des administrateurs](best-practices.md#101-formation-des-utilisateurs-et-des-administrateurs)
+### 10.2. [Politique de gestion des identifiants et mots de passe](best-practices.md#102-politique-de-gestion-des-identifiants-et-mots-de-passe)
+### 10.3. [Bonnes pratiques pour les développeurs](best-practices.md#103-bonnes-pratiques-pour-les-développeurs)
 
-## Conclusion
+## [Conclusion](conclusion.md)
