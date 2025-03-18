@@ -17,7 +17,7 @@
 
 ## 8.4 Configuration des politiques CORS
 
-Le CORS (Cross-Origin Resource Sharing) est un mécanisme de sécurité qui contrôle comment les pages web d'un domaine peuvent demander des ressources à un autre domaine. Notre configuration sera:
+Le CORS (Cross-Origin Resource Sharing) est un mécanisme de sécurité qui contrôle comment les pages web d'un domaine peuvent demander des ressources à un autre domaine. Il fonctionne comme un garde-frontière qui vérifie les autorisations de passage entre différents sites web. Nous mettrons donc en oeuvre :
 
 - **Liste blanche de domaines** : Seuls les sites web spécifiquement autorisés pourront interagir avec notre API, bloquant automatiquement les requêtes provenant de sources inconnues.
 - **Restrictions des actions** : Limitation précise des opérations autorisées (consultation, modification, etc.) depuis d'autres sites.
