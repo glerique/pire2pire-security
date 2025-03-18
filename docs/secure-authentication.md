@@ -30,9 +30,8 @@ L'implémentation technique des politiques de mots de passe repose sur plusieurs
   - Ajout de règles de validation paramétrables selon l'évolution des standards de sécurité
 
 - **Hachage sécurisé** :
-  - Utilisation d'Argon2id, une méthode moderne de protection des mots de passe, comme premier choix
-  - Utilisation de bcrypt comme alternative
-  - Génération cryptographique de sels uniques d'au moins 16 octets pour chaque utilisateur
+  - Nous utiliserons des méthodes avancées de protection (comme Argon2id) qui transforment votre mot de passe en code illisible, même pour nos administrateurs
+  - Génération de sels uniques d'au moins 16 octets (128 bits) pour chaque utilisateur
   - Stockage séparé des sels et des hachages pour une sécurité renforcée
 
 - **Infrastructure technique** :
@@ -41,7 +40,6 @@ L'implémentation technique des politiques de mots de passe repose sur plusieurs
   - Configuration d'une rotation automatique des clés de chiffrement
 
 - **Mécanismes d'application des politiques** :
-  - Implémentation d'un système modulaire de règles permettant des évolutions futures
   - Création d'un service dédié à la vérification de la robustesse des mots de passe
   - Intégration d'une API interne pour uniformiser les contrôles à travers les différents services
 
