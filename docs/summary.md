@@ -44,10 +44,10 @@
 ### 8.2. [Segmentation des rôles et des permissions](access-management.md#72-segmentation-des-rôles-et-des-permissions)
 ### 8.3. [Surveillance des tentatives d'accès et journalisation](access-management.md#73-surveillance-des-tentatives-daccès-et-journalisation)
 
-## 9. [Maintien en Conditions de Sécurité](security-maintenance)
-### 9.1. [Plan de gestion des mises à jour et des correctifs](security-maintenance#91-plan-de-gestion-des-mises-à-jour-et-des-correctifs)
-### 9.2. [Surveillance et audit régulier](security-maintenance#92-surveillance-et-audit-régulier)
-### 9.3. [Gestion des incidents de sécurité et plan de réponse](security-maintenance#93-gestion-des-incidents-de-sécurité-et-plan-de-réponse)
+## 9. [Maintien en Conditions de Sécurité](security-maintenance.md)
+### 9.1. [Plan de gestion des mises à jour et des correctifs](security-maintenance.md#91-plan-de-gestion-des-mises-à-jour-et-des-correctifs)
+### 9.2. [Surveillance et audit régulier](security-maintenance.md#92-surveillance-et-audit-régulier)
+### 9.3. [Gestion des incidents de sécurité et plan de réponse](security-maintenance.md#93-gestion-des-incidents-de-sécurité-et-plan-de-réponse)
 
 ## 10. [Guide de Sensibilisation et de Bonnes Pratiques](best-practices.md)
 ### 10.1. [Formation des utilisateurs et des administrateurs](best-practices.md#101-formation-des-utilisateurs-et-des-administrateurs)
