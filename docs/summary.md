@@ -37,12 +37,13 @@
 ## 7. [Protection Contre les Vulnérabilités Web](web-vulnerabilities.md)
 ### 7.1. [Mise en place d'une politique Content Security Policy (CSP)](web-vulnerabilities.md#71-mise-en-place-dune-politique-content-security-policy-csp)
 ### 7.2. [Protection contre les attaques XSS, CSRF et SQLi](web-vulnerabilities.md#72-protection-contre-les-attaques-courantes-xss-csrf-et-sqli)
-### 7.3. [Configuration sécurisée des cookies et du stockage navigateur](web-vulnerabilities.md#73-sécurisation-des-données-côté-navigateur)
+### 7.3. [Sécurisation des données côté navigateur](web-vulnerabilities.md#73-sécurisation-des-données-côté-navigateur)
 
 ## 8. [Gestion des Accès et des Autorisations](access-management.md)
-### 8.1. [Principe de moindre privilège](access-management.md#71-principe-de-moindre-privilège)
-### 8.2. [Segmentation des rôles et des permissions](access-management.md#72-segmentation-des-rôles-et-des-permissions)
-### 8.3. [Surveillance des tentatives d'accès et journalisation](access-management.md#73-surveillance-des-tentatives-daccès-et-journalisation)
+### 8.1. [Principe de moindre privilège](access-management.md#81-principe-de-moindre-privilège)
+### 8.2. [Segmentation des rôles et des permissions](access-management.md#82-segmentation-des-rôles-et-des-permissions)
+### 8.3. [Surveillance des tentatives d'accès et journalisation](access-management.md#83-surveillance-des-tentatives-daccès-et-journalisation)
+### 8.4. [Configuration des politiques CORS](access-management.md#84-configuration-des-politiques-cors)
 
 ## 9. [Maintien en Conditions de Sécurité](security-maintenance.md)
 ### 9.1. [Plan de gestion des mises à jour et des correctifs](security-maintenance.md#91-plan-de-gestion-des-mises-à-jour-et-des-correctifs)
