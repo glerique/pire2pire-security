@@ -18,20 +18,17 @@ mainfont: Calibri
 monofont: Consolas
 ---
 
-<div align="center">
-  <h1>📊 Stratégie de Sécurité</h1>
-  <h2>pire2pire.com</h2>
+
+  <h1>📊 Stratégie de Sécurité pire2pire.com 📊</h1>
   <p><em>Document de référence sur la sécurisation de la plateforme de e-learning</em></p>
   <br/>
   <p>
-    <strong>Préparé par:</strong> Équipe Technique pire2pire<br/>
+    <strong>Préparé par:</strong> L'équipe Technique de Nesdev.fr<br/>
     <strong>Version:</strong> 1.0<br/>
-    <strong>Date:</strong> Mars 2025
+    <strong>Date:</strong> 19 Mars 2025
   </p>
-  <hr style="width:50%"/>
-  <p>⚠️ <strong>CONFIDENTIEL</strong> ⚠️</p>
-  <p><em>Ce document contient des informations sensibles concernant l'architecture de sécurité</em></p>
-</div>
+  <p><em>Ce document contient des informations sensibles concernant l'architecture de sécurité de l'application.</em></p>
+
 
 <div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
 
@@ -69,14 +66,12 @@ monofont: Consolas
   - [7.2. Protection contre les attaques XSS, CSRF et SQLi](#72-protection-contre-les-attaques-xss-csrf-et-sqli)
   - [7.3. Sécurisation des données côté navigateur](#73-sécurisation-des-données-côté-navigateur)
 - [8. Gestion des Accès et des Autorisations](#8-gestion-des-accès-et-des-autorisations)
-  - [8.1. Principe de moindre privilège](#81-principe-de-moindre-privilège)
-  - [8.2. Segmentation des rôles et des permissions](#82-segmentation-des-rôles-et-des-permissions)
-  - [8.3. Surveillance des tentatives d'accès et journalisation](#83-surveillance-des-tentatives-daccès-et-journalisation)
-  - [8.4. Configuration des politiques CORS](#84-configuration-des-politiques-cors)
+  - [8.1. Gestion des privilèges et des rôles](#81-gestion-des-privilèges-et-des-rôles)
+  - [8.2. Surveillance des tentatives d'accès et journalisation](#82-surveillance-des-tentatives-daccès-et-journalisation)
+  - [8.3. Configuration des politiques CORS](#83-configuration-des-politiques-cors)
 - [9. Maintien en Conditions de Sécurité](#9-maintien-en-conditions-de-sécurité)
-  - [9.1. Plan de gestion des mises à jour et des correctifs](#91-plan-de-gestion-des-mises-à-jour-et-des-correctifs)
-  - [9.2. Surveillance et audit régulier](#92-surveillance-et-audit-régulier)
-  - [9.3. Gestion des incidents de sécurité et plan de réponse](#93-gestion-des-incidents-de-sécurité-et-plan-de-réponse)
+  - [9.1. Gestion des mises à jour et surveillance](#91-gestion-des-mises-à-jour-et-surveillance)
+  - [9.2. Gestion des incidents de sécurité et plan de réponse](#92-gestion-des-incidents-de-sécurité-et-plan-de-réponse)
 - [10. Guide de Sensibilisation et de Bonnes Pratiques](#10-guide-de-sensibilisation-et-de-bonnes-pratiques)
   - [10.1. Formation des utilisateurs et des administrateurs](#101-formation-des-utilisateurs-et-des-administrateurs)
   - [10.2. Politique de gestion des identifiants et mots de passe](#102-politique-de-gestion-des-identifiants-et-mots-de-passe)
@@ -87,25 +82,26 @@ monofont: Consolas
 
 # Introduction
 
-Ce document définit la stratégie de sécurité de la plateforme de e-learning pire2pire.com.
+This document defines the security strategy for the e-learning platform pire2pire.com.
 
-Nous y avons intégré les recommandations officielles de l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information) pour les applications web, ainsi que les bonnes pratiques internationales reconnues par l'industrie.
+We have incorporated the official recommendations of ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information) for web applications, as well as internationally recognized industry best practices.
 
-La sécurisation d'une plateforme d'apprentissage en ligne moderne présente des défis particuliers : protection des données personnelles des apprenants, sécurisation des contenus pédagogiques propriétaires, et maintien d'une haute disponibilité.
+Securing a modern online learning platform presents unique challenges: protecting learners' personal data, securing proprietary educational content, and maintaining high availability.
 
-Notre approche couvre la sécurité à tous les niveaux : Du navigateur, du backend jusqu'aux bases de données, tout en en incluant l'authentification multifacteur et la conformité au RGPD.
+Our approach covers security at all levels: from the browser to the backend and databases, while also including multi-factor authentication and GDPR compliance.
 
-Notre objectif est de créer un environnement d'apprentissage en ligne où la protection des données s'allie harmonieusement avec l'expérience utilisateur, sans compromis sur la fonctionnalité ou la performance.
+Our goal is to create an online learning environment where data protection seamlessly integrates with user experience, without compromising functionality or performance.
 
-Notre démarche proactive de sécurité vise à :
-- Intégrer les mesures de sécurité dès les premières étapes du développement
-- Implémenter systématiquement les bonnes pratiques reconnues dans l'industrie
-- Garantir une architecture conforme aux standards de sécurité actuels
-- Sécuriser l'ensemble de la chaîne technique, du navigateur jusqu'aux bases de données
-- Respecter rigoureusement les spécifications fonctionnelles établies avec le client
-- Assurer la conformité réglementaire en matière de protection des données personnelles
+Our proactive security approach aims to:
 
-Ce guide s'articule donc autour d'axes stratégiques détaillés, formant un cadre complet pour sécuriser efficacement l'infrastructure, les applications et les données de la plateforme pire2pire.com tout au long de son cycle de développement.
+- Integrate security measures from the early stages of development
+- Systematically implement industry-recognized best practices
+- Ensure an architecture that complies with current security standards
+- Secure the entire technical chain, from the browser to the databases
+- Strictly adhere to the functional specifications established with the client
+- Ensure regulatory compliance in personal data protection
+
+This guide is structured around detailed strategic pillars, forming a comprehensive framework to effectively secure the infrastructure, applications, and data of the pire2pire.com platform throughout its development lifecycle.
 
 <div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
 
@@ -141,9 +137,11 @@ Nous avons ici identifié et listé les menaces potentielles pesant sur la plate
 | **Attaque par force brute** | Tentatives répétées pour deviner les identifiants utilisateurs |
 | **Exfiltration de données** | Extraction non autorisée de données sensibles de la plateforme |
 
+Toutes ces failles de sécurité seront abordées en profondeur dans la partie 7 de cette documentation. Nous y détaillerons les mesures spécifiques à mettre en place pour protéger la plateforme contre les attaques XSS, CSRF, SQLi, et autres vulnérabilités web courantes.
+
 ## 1.3 Définition des exigences de sécurité
 
-Pour minimiser les risques identifiés, plusieurs exigences devront être mises en place. Nous les avons également associées à un niveau de priorité :
+Pour réduire les risques identifiés, plusieurs mesures devront être mises en place. Chacune de ces mesures a été associée à un niveau de priorité afin d'assurer une gestion efficace :
 
 ### Exigences critiques (priorité haute) :
 - **Authentification robuste** : Mise en place de l'authentification multifacteur (MFA) et gestion stricte des mots de passe conformes aux recommandations de l'ANSSI.
@@ -171,9 +169,15 @@ Nous aborderons ces points de manière approfondie tout au long de ce guide.
 
 ## 2.1 Principes fondamentaux du RGPD
 
-Le Règlement Général sur la Protection des Données (RGPD) définit un cadre juridique strict que la plateforme e-learning pire2pire.com doit impérativement respecter pour rester conforme à la législation.
+Le Règlement Général sur la Protection des Données (RGPD) établit un cadre juridique rigoureux pour la protection des données personnelles au sein de l'Union Européenne. En tant que plateforme de e-learning, pire2pire.com manipule quotidiennement des informations personnelles sensibles, ce qui nécessite une conformité stricte avec cette réglementation.
 
-Les principes fondamentaux suivants guideront notre mise en conformité :
+La mise en conformité avec le RGPD n'est pas seulement une obligation légale, mais aussi un élément différenciateur face à la concurrence et un facteur de confiance pour nos utilisateurs.
+
+Notre stratégie de protection des données personnelles s'appuie sur une compréhension approfondie des principes fondamentaux du RGPD, qui influencent directement l'architecture et les processus de notre plateforme.
+
+En outre, nous désignerons un Délégué à la Protection des Données (DPO) qui sera chargé de superviser la conformité RGPD de la plateforme et servira de point de contact pour les autorités de contrôle et les personnes concernées par le traitement de leurs données.
+
+Voici les principes fondamentaux qui guideront notre mise en conformité :
 
 | Principe | Description | Application sur pire2pire.com |
 |----------|-------------|--------------------------------|
@@ -185,9 +189,11 @@ Les principes fondamentaux suivants guideront notre mise en conformité :
 | **Intégrité et confidentialité** | Protection contre tout accès non autorisé | Chiffrement des données et contrôle d'accès strict |
 | **Responsabilité** | Capacité à démontrer la conformité | Documentation et traçabilité des traitements |
 
+<div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
+
 ## 2.2 Gestion des données personnelles des utilisateurs
 
-Notre stratégie de gestion des données personnelles repose sur quatre axes essentiels :
+Notre stratégie de gestion des données personnelles reposera sur quatre axes essentiels :
 
 - **Collecte et consentement** : Obtention d'un consentement explicite avant toute collecte, avec possibilité simple de retrait à tout moment.
 
@@ -197,11 +203,9 @@ Notre stratégie de gestion des données personnelles repose sur quatre axes ess
 
 - **Contrôle d'accès** : Application stricte du principe du moindre privilège, journalisation complète des accès aux données personnelles et vérification régulière des droits attribués aux collaborateurs.
 
-<div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
-
 ## 2.3 Droits des utilisateurs
 
-Notre plateforme implémentera des mécanismes techniques et organisationnels pour garantir l'exercice des droits des utilisateurs :
+Notre plateforme mettra en place des solutions techniques adaptées pour garantir non seulement la conformité aux exigences du RGPD, mais aussi l’exercice effectif des droits des utilisateurs, tels que le droit d'accès, de rectification, de suppression et de portabilité de leurs données personnelles.
 
 | Droit | Description | Implémentation technique |
 |-------|-------------|--------------------------|
@@ -223,7 +227,13 @@ La conception d'une architecture sécurisée pour pire2pire.com constitue le fon
 
 ## 3.1 Choix technologiques
 
-Le choix des technologies est crucial pour établir une base solide en matière de sécurité :
+Le choix des technologies est un élément clé pour établir une base solide en matière de sécurité, car il définit la capacité de la plateforme à faire face aux cybermenaces.
+
+Une sélection soignée des outils et des technologies permet de garantir non seulement la confidentialité et l'intégrité des données, mais aussi d'implémenter des mécanismes de surveillance, de détection et de réponse aux incidents de sécurité.
+
+Il est également crucial d’intégrer des pratiques de sécurité dès les premières étapes du développement, afin de réduire les risques potentiels et de renforcer la résilience du système face aux vulnérabilités.
+
+Dans cette optique, le choix des bonnes technologies pour chaque composant du système devient indispensable. Le tableau ci-dessous présente des exemples de solutions pour les différents composants, accompagnées des justifications détaillées qui soulignent leur efficacité en termes de sécurité, de fiabilité et de pérennité.
 
 | Composant | Solution recommandée | Justification |
 |-----------|----------------------|---------------------------|
@@ -235,11 +245,13 @@ Le choix des technologies est crucial pour établir une base solide en matière 
 | **Système d'authentification** | Solutions standards éprouvées (Keycloak, Auth0) | Implémentation des standards de l'industrie et évolution continue |
 | **Gestion des secrets** | Coffre-fort sécurisé (HashiCorp Vault, AWS KMS) | Stockage centralisé et sécurisé des clés et secrets |
 
-La sélection de ces technologies permet d'assurer une base technique robuste tout en facilitant la maintenance de la sécurité dans le temps. L'ensemble de ces choix favorise également la conformité avec les recommandations de l'ANSSI.
+La sélection de ces technologies permet d'assurer une base technique robuste tout en facilitant la maintenance de la sécurité dans le temps.
 
 ## 3.2 Modèle d'authentification et gestion des autorisations
 
-L'authentification et les autorisations constituent des éléments fondamentaux du système de sécurité :
+L'authentification et les autorisations constituent des éléments fondamentaux du système de sécurité, car elles déterminent qui peut accéder à quelles ressources et sous quelles conditions. L'authentification garantit que l'utilisateur est bien celui qu'il prétend être, en vérifiant son identité à travers des mécanismes tels que les mots de passe. Cette étape est essentielle pour limiter l'accès aux données et aux fonctionnalités sensibles du système.
+
+Voici les mesures clés mises en place pour garantir une gestion rigoureuse de l'accès et des privilèges dans le système :
 
 - **Système de rôles** : Segmentation des accès selon les profils utilisateur (administrateurs, formateurs, apprenants, support) avec des droits strictement définis.
 - **Mécanismes d'authentification** : Mise en place d'authentification multifacteur (MFA) pour les comptes à privilèges élevés et support des standards d'authentification sécurisés (OAuth 2.0, SAML).
@@ -248,7 +260,7 @@ L'authentification et les autorisations constituent des éléments fondamentaux 
 
 ## 3.3 Chiffrement et stockage sécurisé des données
 
-La protection des données au repos et en transit est essentielle pour garantir la confidentialité :
+Pour garantir la confidentialité et la sécurité des données tout au long de leur cycle de vie, plusieurs mesures de protection sront mises en place, couvrant à la fois le chiffrement des données au repos et en transit, ainsi que des pratiques supplémentaires pour sécuriser les échanges et les sauvegardes :
 
 - **Chiffrement en transit** : Utilisation de TLS 1.2+ pour toutes les communications avec les clients et entre services.
 - **Chiffrement au repos** : Sécurisation des données sensibles en base de données avec des algorithmes robustes (bcrypt/Argon2 pour les mots de passe, AES-256 pour les données personnelles).
@@ -258,7 +270,9 @@ La protection des données au repos et en transit est essentielle pour garantir 
 
 ## 3.4 Sécurisation spécifique des composants backend
 
-L'infrastructure backend nécessitera des mesures de sécurité suivantes :
+Pour garantir la robustesse et la sécurité de l'infrastructure backend, il est crucial de mettre en place des mesures spécifiques afin de protéger les données sensibles, d'éviter les accès non autorisés. Ces mesures renforceront les différents composants backend, en appliquant des pratiques de sécurité strictes.
+
+Les points suivants décrivent les principales actions de sécurisation à adopter :
 
 - **Architecture à plusieurs niveaux** : Séparation des couches présentation (interface utilisateur), logique métier (couche applicative) et données pour limiter l'impact des éventuelles compromissions.
 - **Principe du moindre privilège** : Attribution des permissions minimales nécessaires pour chaque composant du système.
@@ -279,7 +293,9 @@ L'intégration de la sécurité dans l'ensemble du cycle de développement logic
 
 ## 4.1 Intégration de la sécurité dans les phases de développement
 
-La sécurité doit être présente à chaque étape du développement de l'application :
+La sécurité ne doit pas être considérée comme une étape ajoutée à la fin du développement, mais doit être intégrée dès le début et tout au long du cycle de vie de l'application. En abordant la sécurité dès les premières phases de conception, on peut identifier et traiter les risques potentiels avant qu'ils ne deviennent des vulnérabilités exploitées.
+
+Les pratiques suivantes illustrent comment la sécurité peut être efficacement intégrée dans chaque phase du développement :
 
 - **Phase de conception** :
   - Modélisation des menaces  pour identifier les risques potentiels.
@@ -300,7 +316,11 @@ Cette approche permet de détecter les problèmes de sécurité au plus tôt, r�
 
 ## 4.2 Tests de sécurité et analyse de code
 
-Un programme complet de tests de sécurité permettra d'identifier les vulnérabilités avant qu'elles n'atteignent l'environnement de production :
+Un programme complet de tests de sécurité est essentiel pour détecter et corriger les vulnérabilités avant qu'elles ne soient exploitées en production.
+
+En effectuant des tests rigoureux tout au long du cycle de développement, notamment des audits de code et des analyses statiques, on peut s'assurer que les failles de sécurité sont identifiées et résolues à temps.
+
+Cela permet non seulement de renforcer la sécurité de l'application, mais aussi de réduire les risques d'incidents en production. Les actions suivantes décrivent les tests à réaliser pour garantir une sécurité maximale.
 
 - **Analyse statique (SAST)** :
   - Intégration d'outils d'analyse automatique dans la chaîne CI/CD.
@@ -310,8 +330,6 @@ Un programme complet de tests de sécurité permettra d'identifier les vulnérab
 - **Tests de composition (SCA)** :
   - Analyse automatique des dépendances pour détecter les vulnérabilités connues.
   - Politique de mise à jour proactive des bibliothèques tierces.
-
-  <div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
 
 ## 4.3 Gestion sécurisée des dépendances
 
@@ -345,7 +363,9 @@ Cette section détaille notre approche pour sécuriser les mécanismes d'authent
 
 ## 5.1 Authentification multifacteur (MFA) et recommandations ANSSI
 
-L'authentification multifacteur est une protection essentielle contre les compromissions de comptes :
+L'authentification multifacteur (MFA) est cruciale pour protéger les comptes contre les compromissions. En ajoutant une couche supplémentaire de vérification, elle rend l'accès plus difficile pour les attaquants, même en cas de vol de mot de passe. Cette mesure est particulièrement importante pour les comptes à privilèges élevés.
+
+Voici les différentes étapes et recommandations pour sa mise en œuvre effective, en tenant compte des bonnes pratiques de sécurité et des recommandations de l'ANSSI
 
 - **Déploiement** : Mise en place obligatoire pour les comptes administrateurs et formateurs, optionnelle mais encouragée pour les apprenants.
 
@@ -361,11 +381,13 @@ L'authentification multifacteur est une protection essentielle contre les compro
 
 ## 5.2 Politiques de gestion des mots de passe
 
-La robustesse des mots de passe demeure fondamentale même avec l'authentification multifacteur :
+La robustesse des mots de passe reste un élément fondamental de la sécurité des comptes, même en présence d'authentification multifacteur. Un mot de passe faible peut encore constituer un point d'entrée pour les attaquants, réduisant ainsi l'efficacité de l'authentification multifacteur.
 
 - ## 5.2 Implémentation technique des politiques de mots de passe
 
-L'implémentation technique des politiques de mots de passe reposera sur plusieurs composants essentiels :
+Pour garantir la sécurité des mots de passe, il est crucial d'implémenter des politiques techniques robustes et évolutives. Cela implique la mise en place de mécanismes de validation et de hachage sophistiqués, afin de protéger les données sensibles contre les attaques et les fuites. L'implémentation des politiques de mots de passe reposera sur plusieurs composants essentiels, détaillés ci-dessous.
+
+  <div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
 
 - **Validation côté serveur** :
   - Mise en place d'une bibliothèque dédiée à la validation des mots de passe.
@@ -376,8 +398,6 @@ L'implémentation technique des politiques de mots de passe reposera sur plusieu
   - Nous utiliserons des méthodes avancées de protection (comme Argon2id) qui transforment un mot de passe en code illisible, même pour nos administrateurs.
   - Génération de sels uniques d'au moins 16 octets (128 bits) pour chaque utilisateur.
   - Stockage séparé des sels et des hachages pour une sécurité renforcée.
-
-<div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
 
 - **Infrastructure technique** :
   - Séparation de la base de données d'authentification des autres services.
@@ -408,9 +428,11 @@ Une gestion rigoureuse des sessions limite les risques d'usurpation d'identité.
   - Limitation du nombre de tentatives de connexion échouées.
   - Verrouillage temporaire du compte après plusieurs échecs.
 
+<div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
+
 ## 5.4 Protection contre les attaques ciblées
 
-Des mesures supplémentaires protègeront les utilisateurs contre des tentatives d'attaques sophistiquées :
+En complément des mesures de sécurité de base, il est essentiel de mettre en place des protections supplémentaires pour contrer des attaques de plus en plus sophistiquées. Ces mesures visent à protéger les utilisateurs contre les tentatives de phishing et les attaques par force brute, en renforçant l'authentification et en élevant le niveau de vigilance. Les stratégies détaillées ci-dessous permettront de renforcer la sécurité et de réduire les risques liés à ces menaces
 
 - **Protection contre le phishing** :
   - Utilisation de clés de sécurité physiques (FIDO2/WebAuthn) pour le personnel administratif.
@@ -430,7 +452,9 @@ La sécurisation des flux de données est cruciale pour protéger les informatio
 
 ## 6.1 Utilisation de TLS et HSTS
 
-Le chiffrement des communications constitue la première ligne de défense contre l'interception de données :
+Le chiffrement des communications constitue la première ligne de défense pour protéger les données sensibles contre l’interception, garantissant ainsi la confidentialité et l'intégrité des informations échangées.
+
+Pour assurer la sécurité des échanges au sein de la plateforme, nous avons mis en place plusieurs mécanismes techniques rigoureux :
 
 - **Configuration TLS** :
   - Déploiement de TLS 1.2+ sur tous les points d'accès de la plateforme.
@@ -446,7 +470,7 @@ Le chiffrement des communications constitue la première ligne de défense contr
 
 ## 6.2 Protection contre les attaques de l'homme du milieu (MITM)
 
-Pour prévenir l'interception des communications, plusieurs mécanismes seront déployés :
+Les attaques de type homme du milieu (MITM) représentent une menace sérieuse pour la confidentialité des données échangées. Afin de protéger les communications sensibles contre ces attaques, il est crucial de déployer des mécanismes de sécurité robustes. Les solutions suivantes seront mises en place pour garantir la protection contre l'interception des informations et renforcer la confiance dans les échanges
 
 - **Vérification des certificats** :
     - Utilisation de certificats numériques vérifiés par des organismes de confiance.
@@ -457,18 +481,18 @@ Pour prévenir l'interception des communications, plusieurs mécanismes seront d
     - Mise en place d'un système de détection des faux certificats.
     - Protection spéciale pour les applications mobiles.
 
+<div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
+
 - **Protections supplémentaires** :
     - Sécurisation des ressources web statiques.
     - Utilisation d'un DNS sécurisé.
     - Vérification des redirections web pour éviter les détournements.
 
-<div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
-
 ## 6.3 Chiffrement des données sensibles en base de données
 
 La protection des données stockées est cruciale pour éviter que des informations sensibles ne soient volées en cas de piratage :
 
-- **Comment on protège les données** :
+- **Protèger les données** :
     - La base de données sera intégralement chiffrée.
     - Les informations très sensibles seront chiffrées séparément pour plus de sécurité.
     - il sera impératif d'utiliser des méthodes de chiffrement modernes et robustes (AES-256, RSA 2048+).
@@ -501,7 +525,9 @@ Une politique CSP agit comme un bouclier contre plusieurs types d'attaques web e
 
 ## 7.2 Protection contre les attaques courantes (XSS, CSRF et SQLi)
 
-Ces attaques classiques nécessitent des défenses spécifiques :
+Les attaques classiques sur les applications web exploitent des failles courantes pour compromettre la sécurité des systèmes.
+
+Pour y faire face, il est impératif de mettre en place des défenses adaptées et rigoureuses :
 
 - **Cross-Site Scripting (XSS) - Injection de code malveillant** :
     - Nettoyage systématique des données avant affichage.
@@ -514,13 +540,13 @@ Ces attaques classiques nécessitent des défenses spécifiques :
     - Configuration des cookies pour qu'ils ne fonctionnent que sur l'application.
     - Contrôle de l'origine des requêtes pour les opérations sensibles.
 
+<div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
+
 - **Injections SQL - Manipulation des requêtes de base de données** :
     - Utilisation de méthodes sécurisées pour communiquer avec la base de données.
     - Vérification et nettoyage des données utilisateur avant utilisation.
     - Limitation des droits d'accès à la base de données.
     - Masquage des messages d'erreur techniques aux utilisateurs.
-
-<div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
 
 ## 7.3 Sécurisation des données côté navigateur
 
@@ -546,7 +572,7 @@ L'application systématique de ces mesures de protection permettra de réduire s
 
 # 8. Gestion des Accès et des Autorisations
 
-## 8.1 Principe de moindre privilège
+## 8.1 Gestion des privilèges et des rôles
 
 - **Accès minimal** : Chaque utilisateur ne disposera que des permissions strictement nécessaires à l'exécution de ses tâches. Par exemple, un formateur n'aura pas besoin d'accéder aux dossiers administratifs.
 
@@ -554,15 +580,13 @@ L'application systématique de ces mesures de protection permettra de réduire s
 
 - **Élévation temporaire des privilèges** : Des accès privilégiés pourront être accordés de manière temporaire en cas d'urgence, puis révoqués après utilisation, afin de limiter la fenêtre d'exposition aux risques.
 
-## 8.2 Segmentation des rôles et des permissions
-
 - **Définition des rôles** : Création de profils d'accès standardisés basés sur les fonctions professionnelles, comme "Formateur", "Apprenant" ou "Administrateur".
 
 - **Séparation des pouvoirs** : Distribution des autorisations critiques entre plusieurs rôles pour éviter qu'une seule personne puisse effectuer des opérations sensibles sans contrôle.
 
 - **Documentation d'accès** : Documentation claire des autorisations par rôle et par ressource, facilitant la compréhension de "qui peut accéder à quoi".
 
-## 8.3 Surveillance des tentatives d'accès et journalisation
+## 8.2 Surveillance des tentatives d'accès et journalisation
 
 - **Journalisation centralisée** : Enregistrement systématique des connexions et actions  dans un seul journal, permettant une vue d'ensemble des activités.
 
@@ -570,7 +594,7 @@ L'application systématique de ces mesures de protection permettra de réduire s
 
 - **Conservation des logs** : Stockage sécurisé des journaux d'accès pour les audits et analyses, permettant de reconstituer les événements en cas d'incident.
 
-## 8.4 Configuration des politiques CORS
+## 8.3 Configuration des politiques CORS
 
 Le CORS (Cross-Origin Resource Sharing) est un mécanisme de sécurité qui contrôle comment les pages web d'un domaine peuvent demander des ressources à un autre domaine. Il fonctionne comme un garde-frontière qui vérifie les autorisations de passage entre différents sites web. Nous mettrons donc en oeuvre les points suivants :
 
@@ -592,9 +616,13 @@ Cette politique nous permet de protèger nos utilisateurs contre les tentatives 
 
 Protéger une plateforme d'apprentissage en ligne n'est pas un acte ponctuel mais un processus continu. Cette section explique comment nous comptons maintenir pire2pire.com en sécurité dans la durée.
 
-## 9.1 Plan de gestion des mises à jour et des correctifs
+## 9.1 Gestion des mises à jour et surveillance
 
-Comme pour une voiture qui nécessite un entretien régulier, notre système aura besoin d'être constamment mis à jour :
+Comme pour une voiture qui nécessite un entretien régulier, notre système aura besoin d'être constamment mis à jour pour rester performant et sécurisé.
+
+La gestion des mises à jour et la réponse aux urgences doivent être intégrées dans une stratégie proactive afin de minimiser les risques.
+
+Voici les mesures à mettre en place :
 
 - **Mises à jour planifiées** :
   - Vérification hebdomadaire des correctifs disponibles pour tous nos logiciels.
@@ -607,9 +635,9 @@ Comme pour une voiture qui nécessite un entretien régulier, notre système aur
   - Procédure accélérée pour les correctifs critiques (moins de 24h).
   - Système de notifications pour les utilisateurs en cas d'impact sur le service.
 
-## 9.2 Surveillance et audit régulier
+Il est tout aussi essentiel de garder un œil attentif sur notre système, comme un gardien qui fait ses rondes.
 
-Il est essentiel de garder un œil attentif sur notre système, comme un gardien qui fait ses rondes :
+Une surveillance active est nécessaire pour détecter en temps réel toute activité suspecte ou tout signe d'attaque :
 
 - **Surveillance quotidienne** :
   - Analyse automatique des journaux d'activité pour détecter les comportements suspects.
@@ -623,9 +651,13 @@ Il est essentiel de garder un œil attentif sur notre système, comme un gardien
 
 <div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
 
-## 9.3 Gestion des incidents de sécurité et plan de réponse
+## 9.2 Gestion des incidents de sécurité et plan de réponse
 
-Même avec les meilleures protections, il faut être prêt à réagir de manière rapide et efficace en cas de problème :
+Malgré la mise en place de protections robustes, il est crucial d’être préparé à réagir rapidement et de manière efficace face à tout incident ou problème de sécurité.
+
+La capacité à gérer un incident de manière fluide et structurée est essentielle pour minimiser les dommages et restaurer rapidement la sécurité de la plateforme.
+
+Voici les actions à mettre en place pour assurer une gestion optimale des incidents :
 
 - **Préparation** :
   - Équipe d'intervention clairement identifiée avec des rôles définis.
@@ -644,17 +676,21 @@ Même avec les meilleures protections, il faut être prêt à réagir de manièr
   - Mise à jour des procédures en fonction des expériences vécues.
   - Partage d'informations avec la communauté (si approprié) pour améliorer la sécurité collective.
 
-Notre stratégie de maintien en conditions de sécurité transforme la protection de notre plateforme en un cycle vertueux d'amélioration continue.
+Notre stratégie de maintien en conditions de sécurité s'inscrit dans un processus d'amélioration continue, où chaque incident est une opportunité de renforcer notre sécurité et de rendre notre plateforme plus résiliente aux menaces futures. Cette approche proactive garantit que notre environnement reste sécurisé, tout en favorisant une culture de vigilance et d'apprentissage au sein de notre organisation.
 
 <div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
 
 # 10. Guide de Sensibilisation et de Bonnes Pratiques
 
-La sécurité d'une plateforme comme pire2pire.com repose non seulement sur des aspects techniques, mais aussi sur les comportements humains. Cette section reprend les points importants précédemment abordés dans cette documentation, en les regroupant sous forme de mini-guide des meilleures pratiques à adopter par tous les acteurs du système.
+La sécurité d'une plateforme comme pire2pire repose non seulement sur des aspects techniques, mais aussi sur les comportements humains.
+
+Cette section reprend les points importants précédemment abordés dans cette documentation, en les regroupant sous forme de mini-guide des meilleures pratiques à adopter par tous les acteurs du système.
 
 ## 10.1 Formation des utilisateurs et des administrateurs
 
-Une communauté informée constitue la meilleure défense contre de nombreuses menaces :
+Une communauté bien informée constitue également la première ligne de défense contre de nombreuses menaces. En sensibilisant les utilisateurs aux risques de sécurité, on réduit considérablement les vulnérabilités liées aux erreurs humaines et aux attaques ciblées.
+
+Il est essentiel d'intégrer des actions de formation et de sensibilisation continues pour maintenir un haut niveau de vigilance. Voici les actions clés à mettre en place :
 
 - **Programme de sensibilisation** :
   - Sensibilisation des nouveaux utilisateurs aux bases de la sécurité
@@ -674,7 +710,7 @@ Une communauté informée constitue la meilleure défense contre de nombreuses m
 
 ## 10.2 Politique de gestion des identifiants et mots de passe
 
-Des identifiants bien gérés sont essentiels pour maintenir la sécurité des comptes :
+Une gestion rigoureuse des identifiants est essentielle pour garantir la sécurité des comptes et prévenir les accès non autorisés. Pour assurer cette sécurité, plusieurs actions doivent être mises en place, notamment :
 
 - **Bonnes pratiques pour les utilisateurs** :
   - Création de phrases de passe plutôt que des mots de passe simples.
@@ -682,12 +718,12 @@ Des identifiants bien gérés sont essentiels pour maintenir la sécurité des c
   - Conseils pratiques pour créer des mots de passe facilement mémorisables et sécurisés.
   - Encouragement à l'activation de l'authentification à deux facteurs.
 
+<div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
+
 - **Organisation interne** :
   - Procédure sécurisée de réinitialisation des mots de passe avec vérification d'identité.
   - Gestion des départs d'employés avec révocation immédiate des accès.
   - Audit régulier des comptes dormants ou suspicieux.
-
-<div style="page-break-after: always !important; break-after: page !important; display: block !important; clear: both !important;"></div>
 
 - **Mesures préventives** :
   - Détection des tentatives de connexion depuis des lieux inhabituels.
@@ -696,7 +732,7 @@ Des identifiants bien gérés sont essentiels pour maintenir la sécurité des c
 
 ## 10.3 Bonnes pratiques pour les développeurs
 
-Le code bien écrit est le fondement d'une application sécurisée :
+Un code bien écrit constitue la base d'une application sécurisée. En appliquant des principes de développement rigoureux, on réduit les vulnérabilités et on garantit une meilleure résilience face aux attaques. Il est crucial d'adopter des pratiques de développement sécurisées à chaque étape du processus. Voici les pratiques essentielles à suivre pour assurer la sécurité du code :
 
 - **Principes de développement sécurisé** :
   - Liste de contrôle de sécurité à consulter durant les phases de développement.
